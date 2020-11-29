@@ -26,7 +26,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +122,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "unificacion-deportiva-client"
+    }
+  },
+  "defaultProject": "unificacion-deportiva-client",
+  "cli": {
+    "analytics": "12aafc3f-19b1-47be-820e-2e0e980d685c"
+  }
 }
