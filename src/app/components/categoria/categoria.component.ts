@@ -44,6 +44,9 @@ export class CategoriaComponent implements OnInit {
       estatus: 1
     }]
     //////
+    var some = new Date()
+    console.log(some);
+    console.log(some.getHours());
   }
 
   goToTorneo(categoria){

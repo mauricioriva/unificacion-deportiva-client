@@ -9,7 +9,8 @@ export class Equipo {
     estatus: number;
     archivo_registros: string;
 
-    constructor(id, id_categoria, nombre_equipo, color_playera, color_short, logo, grupo, estatus, archivo_registros){
+    constructor(id, id_categoria, nombre_equipo, color_playera, 
+        color_short, logo, grupo, estatus, archivo_registros){
         this.id = id;
         this.id_categoria = id_categoria;
         this.nombre_equipo = nombre_equipo;
@@ -19,6 +20,15 @@ export class Equipo {
         this.grupo = grupo;
         this.estatus = estatus;
         this.archivo_registros = archivo_registros;
+    }
+
+    /**
+     * Te dice si 2 equipos pertenecen a la misma categoria
+     *
+     * @memberof Equipo
+     */
+    mismaCategoria(equipo: Equipo): boolean {
+        return this.id_categoria == equipo.id_categoria;
     }
 
 }
