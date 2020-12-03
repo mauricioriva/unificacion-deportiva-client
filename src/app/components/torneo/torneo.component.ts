@@ -17,15 +17,17 @@ export class TorneoComponent implements OnInit {
 
   idCategoria: number;
 
-  constructor(private torneoService: TorneoService, private router: ActivatedRoute) { }
+  constructor(private torneoService: TorneoService, 
+    private activeRouter: ActivatedRoute, 
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.idCategoria = this.router.params['_value'].id;
+    this.idCategoria = this.activeRouter.params['_value'].id;
     this.getTorneosCategoria();
   }
 
   getTorneosCategoria(){
-    this.torneos = []
+    this.torneos = [];
     this.torneoService.getTorneosCategoria(this.idCategoria).subscribe(
       res => {
         this.torneos = res;
@@ -40,6 +42,10 @@ export class TorneoComponent implements OnInit {
       fecha_inicio: "10 Abril 2021",
       estatus: 1,
     }]
+  }
+
+  goToPartidos(torneo){
+    this.router.navigate(['/partido/torneo/' + torneo.id])
   }
 
 }

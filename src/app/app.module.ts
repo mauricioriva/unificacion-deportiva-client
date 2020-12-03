@@ -9,6 +9,7 @@ import { TorneoComponent } from './components/torneo/torneo.component';
 import { EquipoComponent } from './components/equipo/equipo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PartidoComponent } from './components/partido/partido.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CanchaComponent,
     CategoriaComponent,
     TorneoComponent,
-    EquipoComponent
+    EquipoComponent,
+    PartidoComponent
   ],
   imports: [
     BrowserModule,

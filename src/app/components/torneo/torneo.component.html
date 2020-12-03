@@ -14,6 +14,7 @@
                         <th class="text-center">Nombre del Torneo</th>
                         <th class="text-center">Fecha de Inicio</th>
                         <th class="text-center">Estatus</th>
+                        <th class="text-center">Partidos</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,6 +22,11 @@
                         <td class="text-center align-middle">{{ torneo.nombre_torneo }}</td>
                         <td class="text-center align-middle">{{ torneo.fecha_inicio}}</td>
                         <td class="text-center align-middle">{{ torneo.estatus }}</td>
+                        <td>
+                            <div style="text-align: center;">
+                                <button title="Partidos" (click)="goToPartidos(torneo)" type="button" class="btn btn-secondary"><i class="fas fa-futbol"></i></button>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
