@@ -27,13 +27,20 @@
                 <tbody>
                     <tr *ngFor="let categoria of categorias">
                         <td class="text-center align-middle">{{ categoria.nombre_categoria }}</td>
-                        <td class="text-center align-middle">{{ categoria.lunes }}</td>
-                        <td class="text-center align-middle">{{ categoria.martes }}</td>
-                        <td class="text-center align-middle">{{ categoria.miercoles }}</td>
-                        <td class="text-center align-middle">{{ categoria.jueves }}</td>
-                        <td class="text-center align-middle">{{ categoria.viernes }}</td>
-                        <td class="text-center align-middle">{{ categoria.sabado }}</td>
-                        <td class="text-center align-middle">{{ categoria.domingo }}</td>
+                        <td class="text-center align-middle" *ngIf="categoria.lunes == 1"><i class="far fa-check-circle" style="color:green"></i></td>
+                        <td class="text-center align-middle" *ngIf="categoria.lunes == 0"><i class="far fa-times-circle" style="color:red"></i></td>
+                        <td class="text-center align-middle" *ngIf="categoria.martes == 1"><i class="far fa-check-circle" style="color:green"></i></td>
+                        <td class="text-center align-middle" *ngIf="categoria.martes == 0"><i class="far fa-times-circle" style="color:red"></i></td>
+                        <td class="text-center align-middle" *ngIf="categoria.miercoles == 1"><i class="far fa-check-circle" style="color:green"></i></td>
+                        <td class="text-center align-middle" *ngIf="categoria.miercoles == 0"><i class="far fa-times-circle" style="color:red"></i></td>
+                        <td class="text-center align-middle" *ngIf="categoria.jueves == 1"><i class="far fa-check-circle" style="color:green"></i></td>
+                        <td class="text-center align-middle" *ngIf="categoria.jueves == 0"><i class="far fa-times-circle" style="color:red"></i></td>
+                        <td class="text-center align-middle" *ngIf="categoria.viernes == 1"><i class="far fa-check-circle" style="color:green"></i></td>
+                        <td class="text-center align-middle" *ngIf="categoria.viernes == 0"><i class="far fa-times-circle" style="color:red"></i></td>
+                        <td class="text-center align-middle" *ngIf="categoria.sabado == 1"><i class="far fa-check-circle" style="color:green"></i></td>
+                        <td class="text-center align-middle" *ngIf="categoria.sabado == 0"><i class="far fa-times-circle" style="color:red"></i></td>
+                        <td class="text-center align-middle" *ngIf="categoria.domingo == 1"><i class="far fa-check-circle" style="color:green"></i></td>
+                        <td class="text-center align-middle" *ngIf="categoria.domingo == 0"><i class="far fa-times-circle" style="color:red"></i></td>
                         <td class="text-center align-middle">{{ categoria.duracion_partidos }}&nbsp;min</td>
                         <td class="text-center align-middle">{{ categoria.estatus }}</td>
                         <td>
@@ -49,3 +56,4 @@
         </div>
     </div>
 </div>
+

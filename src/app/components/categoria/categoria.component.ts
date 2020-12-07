@@ -29,21 +29,6 @@ export class CategoriaComponent implements OnInit {
       },
       err => console.error(err)
     )
-    //Temporal
-    this.categorias = [{
-      id: 1,
-      nombre_categoria: "Varonil",
-      lunes: 1,
-      martes: 0,
-      miercoles: 0,
-      jueves: 1,
-      viernes: 0,
-      sabado: 1,
-      domingo: 0,
-      duracion_partidos: 90,
-      estatus: 1
-    }]
-    //////
   }
 
   goToTorneo(categoria){

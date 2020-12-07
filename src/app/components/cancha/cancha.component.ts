@@ -15,17 +15,40 @@ export class CanchaComponent implements OnInit {
   canchas: Cancha[] | any;
   cancha: Cancha | any;
 
-  idCategoria: number;
-
   constructor(private canchaService: CanchaService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.idCategoria = this.router.params['_value'].id;
-    this.getCanchasCategoria();
+    var idCategoria = this.router.params['_value'].id;
+    this.getCanchasCategoria(idCategoria);
   }
 
-  getCanchasCategoria(){
-    /////
+  getCanchasCategoria(idCategoria: number){
+    this.canchas = [];
+    let canchas: Cancha[] | any = [];
+    this.canchaService.getCanchasCategoria(idCategoria).subscribe(
+      res => {
+        this.canchas = res;
+        canchas = res;
+      },
+      err => console.error(err)
+    )
+    //////////// Temporal
+    this.canchas = [{
+      id: 1,
+      id_categoria: 1,
+      nombre_cancha: "Estadio",
+      domicilio_cancha: "Mexico",
+      estatus: "1"
+    }]
+
+    canchas = [{
+      id: 1,
+      id_categoria: 1,
+      nombre_cancha: "Estadio",
+      domicilio_cancha: "Mexico",
+      estatus: "1"
+    }]
+    return canchas;
   }
 
 }

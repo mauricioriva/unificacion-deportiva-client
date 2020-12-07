@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Equipo } from '../../_models/equipo';
 import { EquipoService } from '../../_services/equipo.service';
+import { Categoria } from '../../_models/categoria';
+import { CategoriaService } from '../../_services/categoria.service';
 
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -14,13 +16,21 @@ export class EquipoComponent implements OnInit {
 
   equipos: Equipo[] | any;
   equipo: Equipo | any;
+  categoria: Categoria | any;
 
   idCategoria: number;
 
-  constructor(private equipoService: EquipoService, private router: ActivatedRoute) { }
+  constructor(private equipoService: EquipoService,private categoriaService: CategoriaService,
+    private router: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.idCategoria = this.router.params['_value'].id;
+    this.categoriaService.getCategoria(this.idCategoria).subscribe(
+      res => {
+        this.categoria = res;
+      },
+      err => console.error(err)
+    )
     this.getEquiposCategoria();
   }
 
@@ -32,19 +42,6 @@ export class EquipoComponent implements OnInit {
       },
       err => console.error(err)
     )
-    // Temporal
-    this.equipos = [{
-      id: 1,
-      id_categoria: 1,
-      nombre_equipo: "Pumas",
-      color_playera: "Azul",
-      color_short: "Dorado",
-      logo: "PUMA",
-      grupo: "Liga MX",
-      estatus: 2,
-      archivo_registros: "Archivo.pdf"
-    }]
-    ///////////////
   }
 
 }

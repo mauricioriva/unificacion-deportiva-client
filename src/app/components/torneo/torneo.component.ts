@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Torneo } from '../../_models/torneo';
 import { TorneoService } from '../../_services/torneo.service';
+import { Categoria } from '../../_models/categoria';
+import { CategoriaService } from '../../_services/categoria.service';
 
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -14,15 +16,22 @@ export class TorneoComponent implements OnInit {
 
   torneos: Torneo[] | any;
   torneo: Torneo | any;
+  categoria: Categoria | any;
 
   idCategoria: number;
 
   constructor(private torneoService: TorneoService, 
-    private activeRouter: ActivatedRoute, 
+    private activeRouter: ActivatedRoute, private categoriaService: CategoriaService,
     private router: Router) { }
 
   ngOnInit(): void {
     this.idCategoria = this.activeRouter.params['_value'].id;
+    this.categoriaService.getCategoria(this.idCategoria).subscribe(
+      res => {
+        this.categoria = res;
+      },
+      err => console.error(err)
+    )
     this.getTorneosCategoria();
   }
 
@@ -34,14 +43,6 @@ export class TorneoComponent implements OnInit {
       },
       err => console.error(err)
     )
-    //Temporal
-    this.torneos = [{
-      id: 1,
-      id_categoria: 1,
-      nombre_torneo: "Liga MX",
-      fecha_inicio: "10 Abril 2021",
-      estatus: 1,
-    }]
   }
 
   goToPartidos(torneo){
