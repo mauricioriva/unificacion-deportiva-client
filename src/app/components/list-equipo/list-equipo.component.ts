@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Equipo } from '../../_models/equipo';
 import { EquipoService } from '../../_services/equipo.service';
 
+import { ActivatedRoute, Router } from '@angular/router';
+
 @Component({
   selector: 'app-list-equipo',
   templateUrl: './list-equipo.component.html',
@@ -13,7 +15,9 @@ export class ListEquipoComponent implements OnInit {
   equipos: Equipo[] | any;
   equipo: Equipo | any;
 
-  constructor(private equipoService: EquipoService) { }
+  constructor(private equipoService: EquipoService,
+    private activeRouter: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.getEquipos();
@@ -27,6 +31,10 @@ export class ListEquipoComponent implements OnInit {
       },
       err => console.error(err)
     )
+  }
+
+  goToPartidos(equipo){
+    this.router.navigate(['/partido/equipo/' + equipo.id])
   }
 
 }

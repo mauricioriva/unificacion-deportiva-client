@@ -7,7 +7,8 @@ import { CanchaComponent } from './components/cancha/cancha.component';
 import { EquipoComponent } from './components/equipo/equipo.component';
 import { ListEquipoComponent } from './components/list-equipo/list-equipo.component';
 import { ListTorneoComponent } from './components/list-torneo/list-torneo.component';
-//import { PartidoComponent } from './components/partido/partido.component';
+import { PartidoEquipoComponent } from './components/partido/partido-equipo/partido-equipo.component';
+import { PartidoTorneoComponent } from './components/partido/partido-torneo/partido-torneo.component';
 
 const routes: Routes = [
   {path: '', component: CategoriaComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'torneo/categoria/:id', component: TorneoComponent},
   {path: 'cancha/categoria/:id', component: CanchaComponent},
   {path: 'equipo/categoria/:id', component: EquipoComponent},
-  //{path: 'partido/torneo/:id', component: PartidoComponent},
+  {path: 'partido/torneo/:id', component: PartidoTorneoComponent},
+  {path: 'partido/equipo/:id', component: PartidoEquipoComponent},
   {path: 'equipo', component: ListEquipoComponent},
   {path: 'torneo', component: ListTorneoComponent},
   

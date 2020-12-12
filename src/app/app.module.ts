@@ -11,8 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListEquipoComponent } from './components/list-equipo/list-equipo.component';
 import { ListTorneoComponent } from './components/list-torneo/list-torneo.component';
-//import { PartidoComponent } from './components/partido/partido.component';
 import { LayoutModule } from '../app/layout/layout.module';
+import { PartidoTorneoComponent } from './components/partido/partido-torneo/partido-torneo.component';
+import { PartidoEquipoComponent } from './components/partido/partido-equipo/partido-equipo.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,9 @@ import { LayoutModule } from '../app/layout/layout.module';
     TorneoComponent,
     EquipoComponent,
     ListEquipoComponent,
-    ListTorneoComponent
-    //PartidoComponent
+    ListTorneoComponent,
+    PartidoTorneoComponent,
+    PartidoEquipoComponent
   ],
   imports: [
     BrowserModule,

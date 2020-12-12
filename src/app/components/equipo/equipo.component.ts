@@ -20,11 +20,13 @@ export class EquipoComponent implements OnInit {
 
   idCategoria: number;
 
-  constructor(private equipoService: EquipoService,private categoriaService: CategoriaService,
-    private router: ActivatedRoute) { }
+  constructor(private equipoService: EquipoService,
+    private activeRouter: ActivatedRoute, 
+    private categoriaService: CategoriaService,
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.idCategoria = this.router.params['_value'].id;
+    this.idCategoria = this.activeRouter.params['_value'].id;
     this.categoriaService.getCategoria(this.idCategoria).subscribe(
       res => {
         this.categoria = res;
@@ -42,6 +44,10 @@ export class EquipoComponent implements OnInit {
       },
       err => console.error(err)
     )
+  }
+
+  goToPartidos(equipo){
+    this.router.navigate(['/partido/equipo/' + equipo.id])
   }
 
 }

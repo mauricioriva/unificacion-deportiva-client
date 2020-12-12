@@ -18,6 +18,7 @@
                         <th class="text-center">Grupo</th>
                         <th class="text-center">Estatus</th>
                         <th class="text-center">Archivo de Registros</th>
+                        <th class="text-center">Partidos</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,6 +30,11 @@
                         <td class="text-center align-middle">{{ equipo.grupo }}</td>
                         <td class="text-center align-middle">{{ equipo.estatus }}</td>
                         <td class="text-center align-middle">{{ equipo.archivo_registros }}</td>
+                        <td>
+                            <div style="text-align: center;">
+                                <button title="Partidos" (click)="goToPartidos(equipo)" type="button" class="btn btn-secondary"><i class="fas fa-futbol"></i></button>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
