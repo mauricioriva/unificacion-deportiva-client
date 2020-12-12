@@ -14,6 +14,7 @@ import { ListTorneoComponent } from './components/list-torneo/list-torneo.compon
 import { LayoutModule } from '../app/layout/layout.module';
 import { PartidoTorneoComponent } from './components/partido/partido-torneo/partido-torneo.component';
 import { PartidoEquipoComponent } from './components/partido/partido-equipo/partido-equipo.component';
+import { PartidoComponent } from './components/partido/partido.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PartidoEquipoComponent } from './components/partido/partido-equipo/part
     ListEquipoComponent,
     ListTorneoComponent,
     PartidoTorneoComponent,
-    PartidoEquipoComponent
+    PartidoEquipoComponent,
+    PartidoComponent
   ],
   imports: [
     BrowserModule,

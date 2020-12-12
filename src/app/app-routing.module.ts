@@ -9,17 +9,19 @@ import { ListEquipoComponent } from './components/list-equipo/list-equipo.compon
 import { ListTorneoComponent } from './components/list-torneo/list-torneo.component';
 import { PartidoEquipoComponent } from './components/partido/partido-equipo/partido-equipo.component';
 import { PartidoTorneoComponent } from './components/partido/partido-torneo/partido-torneo.component';
+import { PartidoComponent } from './components/partido/partido.component';
 
 const routes: Routes = [
   {path: '', component: CategoriaComponent},
+  {path: 'equipo', component: ListEquipoComponent},
+  {path: 'torneo', component: ListTorneoComponent},
+  {path: 'partido', component: PartidoComponent},
   {path: 'categoria', component: CategoriaComponent},
   {path: 'torneo/categoria/:id', component: TorneoComponent},
   {path: 'cancha/categoria/:id', component: CanchaComponent},
   {path: 'equipo/categoria/:id', component: EquipoComponent},
   {path: 'partido/torneo/:id', component: PartidoTorneoComponent},
   {path: 'partido/equipo/:id', component: PartidoEquipoComponent},
-  {path: 'equipo', component: ListEquipoComponent},
-  {path: 'torneo', component: ListTorneoComponent},
   
   {path: '**', redirectTo: ''}
 ];
