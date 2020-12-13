@@ -1,1 +1,50 @@
-<p>partido works!</p>
+<div class="container-fluid">
+    <div class="card mb-3">
+
+        <!-- Header  -->
+        <div class="card-header">
+            <h3><i class="fas fa-futbol"></i>&nbsp;&nbsp;Partidos</h3>
+        </div>
+
+        <!-- Body  -->
+        <div class="card-body">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th class="text-center">Torneo</th>
+                        <th class="text-center">Equipo Local</th>
+                        <th class="text-center">Marcador</th>
+                        <th class="text-center">Equipo Visita</th>
+                        <th class="text-center">Cancha</th>
+                        <th class="text-center">Horario</th>
+                        <th class="text-center">Jornada</th>
+                        <th class="text-center">Estado</th>
+                        <th class="text-center">Estatus</th>
+                        <th class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let partido of partidos">
+                        <td class="text-center align-middle">{{ partido.torneo }}</td>
+                        <td class="text-center align-middle">{{ partido.equipo_local }}</td>
+                        <td class="text-center align-middle">{{ partido.goles_local }} - {{ partido.goles_visita }}</td>
+                        <td class="text-center align-middle">{{ partido.equipo_visita }}</td>
+                        <td class="text-center align-middle">{{ partido.cancha }}</td>
+                        <td class="text-center align-middle">{{ partido.horario_partido }}</td>
+                        <td class="text-center align-middle">{{ partido.jornada }}</td>
+                        <td class="text-center align-middle">{{ partido.estado }}</td>
+                        <td class="text-center align-middle">{{ partido.estatus }}</td>
+                        <td>
+                            <div style="float: right;">
+                                <button title="Editar" (click)="openModalPartidoEditar(partido)" type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                                &nbsp;&nbsp;
+                                <button title="Eliminar" (click)="eliminarPartido(partido.id)" type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
