@@ -47,19 +47,19 @@ export class PartidoComponent implements OnInit {
         for (let index = 0; index < this.partidos.length; index++) {
           this.torneoService.getTorneo(this.partidos[index].id_torneo).subscribe(
             res => {
-              this.partidos[index].torneo = res.nombre_torneo
+              //this.partidos[index].torneo = res.nombre_torneo
             },
             err => console.error(err)
           )
           this.equipoService.getEquipo(this.partidos[index].id_equipo_local).subscribe(
             res => {
-              this.partidos[index].equipo_local = res.nombre_equipo
+              //this.partidos[index].equipo_local = res.nombre_equipo
             },
             err => console.error(err)
           )
           this.equipoService.getEquipo(this.partidos[index].id_equipo_visita).subscribe(
             res => {
-              this.partidos[index].equipo_visita = res.nombre_equipo
+              //this.partidos[index].equipo_visita = res.nombre_equipo
             },
             err => console.error(err)
           )

@@ -10,9 +10,10 @@ import { ListTorneoComponent } from './components/list-torneo/list-torneo.compon
 import { PartidoEquipoComponent } from './components/partido/partido-equipo/partido-equipo.component';
 import { PartidoTorneoComponent } from './components/partido/partido-torneo/partido-torneo.component';
 import { PartidoComponent } from './components/partido/partido.component';
+import { MainComponent } from './components/main/main.component';
 
 const routes: Routes = [
-  {path: '', component: CategoriaComponent},
+  {path: '', component: MainComponent},
   {path: 'equipo', component: ListEquipoComponent},
   {path: 'torneo', component: ListTorneoComponent},
   {path: 'partido', component: PartidoComponent},

@@ -15,6 +15,9 @@ import { LayoutModule } from '../app/layout/layout.module';
 import { PartidoTorneoComponent } from './components/partido/partido-torneo/partido-torneo.component';
 import { PartidoEquipoComponent } from './components/partido/partido-equipo/partido-equipo.component';
 import { PartidoComponent } from './components/partido/partido.component';
+import { LoginComponent } from './components/autenticacion/login/login.component';
+import { RegistroComponent } from './components/autenticacion/registro/registro.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { PartidoComponent } from './components/partido/partido.component';
     ListTorneoComponent,
     PartidoTorneoComponent,
     PartidoEquipoComponent,
-    PartidoComponent
+    PartidoComponent,
+    LoginComponent,
+    RegistroComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
